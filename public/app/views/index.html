@@ -18,22 +18,23 @@
     <script src="app/routes.js"></script>
     <!-- Angular Controllers -->
     <script src="app/controllers/userCtrl.js"></script>
+    <script src="app/controllers/mainCtrl.js"></script>
+    <script src="app/controllers/emailCtrl.js"></script>
+    <script src="app/controllers/managementCtrl.js"></script>
     <!-- Angular Services -->
     <script src="app/services/userServices.js"></script>
+    <script src="app/services/authServices.js"></script>
     <!-- Style Sheets -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 </head>
 
-<body ng-app="userApp">
+<body ng-app="userApp" ng-controller="mainCtrl as main">
     <div class="row">
-        <div class="slide">
-
-
-        </div>
+        <div class="slide"></div>
     </div>
 
     <nav class="navbar navbar-inverse navbar-top">
@@ -68,20 +69,17 @@
                                 <a href="/register">Register</a>
                             </li>
                             <li>
-                                <a href="#">Another action</a>
+                                <a href="/login">Login</a>
                             </li>
                             <li>
-                                <a href="#">Something else here</a>
+                                <a href="#" ng-click="main.logout();">Logout</a>
                             </li>
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">Nav header</li>
-                            <li>
-                                <a href="#">Separated link</a>
-                            </li>
-                            <li>
-                                <a href="#">One more separated link</a>
-                            </li>
                         </ul>
+                    </li>
+                    <li>
+                        <a href="#"> Hello, {{ main.username }}</a>
                     </li>
                 </ul>
             </div>
