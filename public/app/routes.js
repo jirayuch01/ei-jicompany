@@ -21,6 +21,14 @@ angular.module('appRoutes', ['ngRoute'])
             .when('/logout', {
                 templateUrl: 'app/views/pages/users/logout.html'
             })
+            .when('/profile', {
+                templateUrl: 'app/views/pages/users/profile.html'
+            })
+            .when('/facebook/:token', {
+                templateUrl: 'app/views/pages/users/social/social.html'
+                // ,controller: 'facebookCtrl',
+                // controllerAs: 'facebook'
+            })
             .otherwise({
                 redirectTo: '/'
             });
