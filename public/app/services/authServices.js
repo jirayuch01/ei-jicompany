@@ -17,6 +17,10 @@ angular.module('authServices', [])
             }
         };
 
+        authFactory.facebook = function (token) {
+            AuthToken.setToken(token);
+        };
+
         authFactory.getUser = function () {
             if (AuthToken.getToken()) {
                 return $http.post('/api/me');

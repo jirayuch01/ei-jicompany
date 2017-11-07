@@ -22,4 +22,41 @@ angular.module('userControllers', ['userServices'])
                 }
             });
         };
+    })
+
+    .controller('facebookCtrl', function ($routeParams, Auth, $location, $window) {
+        var app = this;
+        app.errorMsg = false;
+        if ($window.location.pathname == '/facebookerror') {
+            app.errorMsg = 'Facebook e-mail not found in database.';
+        } else {
+            console.log($routeParams.token);
+            Auth.facebook($routeParams.token);
+            $location.path('/');
+        }
+    })
+
+    .controller('twitterCtrl', function ($routeParams, Auth, $location, $window) {
+        var app = this;
+        app.errorMsg = false;
+        if ($window.location.pathname == '/twittererror') {
+            app.errorMsg = 'Twitter e-mail not found in database.';
+        } else {
+            console.log($routeParams.token);
+            Auth.facebook($routeParams.token);
+            $location.path('/');
+        }
+    })
+
+    .controller('googleCtrl', function ($routeParams, Auth, $location, $window) {
+        var app = this;
+        app.errorMsg = false;
+        if ($window.location.pathname == '/googleerror') {
+            app.errorMsg = 'Google e-mail not found in database.';
+        } else {
+            console.log($routeParams.token);
+            Auth.facebook($routeParams.token);
+            $location.path('/');
+        }
     });
+

@@ -6,4 +6,3 @@ angular.module('userServices', [])
         };
         return userFactory;
     });
-    
