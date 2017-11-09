@@ -1,87 +1,61 @@
 <div class="row text-center">
-	<div class="container">
-		<h2 class="section-heading">User Login</h2>
-		<h3 class="section-subheading text-muted">Please enter your login information.</h3>
-	</div>
+    <div class="container">
+        <h2 class="section-heading">User Login</h2>
+        <h3 class="section-subheading text-muted">Please enter your login information.</h3>
+    </div>
 </div>
 
 <section id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<form ng-submit="main.doLogin(loginData);">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<label>Username:</label>
-								<input ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="form-control" type="text"
-								 name="username" placeholder="please enter username" ng-model="main.loginData.username">
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<label>Password:</label>
-								<input ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="form-control" type="password"
-								 name="password" placeholder="please enter password" ng-model="main.loginData.password">
-							</div>
-						</div>
-						<div class="clearfix"></div>
-						<div class="col-lg-12 text-left">
-							<div id="success"></div>
-							<button ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" class="btn btn-primary" type="submit">Login</button>&nbsp
-							<button ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" type="button" class="btn btn-success"
-							 ng-click="main.facebook();">Facebook</button>&nbsp
-							<button ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" type="button" class="btn btn-warning"
-							 ng-click="main.twitter();">Twitter</button>&nbsp
-							<button ng-disabled="main.disabled || facebook.disabled || twitter.disabled || google.disabled" type="button" class="btn btn-info"
-							 ng-click="main.google();">Google</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-
-		<br>
-		<div class="jumbotron text-center" ng-show="main.loading">
-			<span class="glyphicon glyphicon-repeat spinner"></span>
-			<p>Loading....</p>
-		</div>
-
-		<br>
-		<div class="row show-hide-message" ng-show="main.successMsg">
-			<div class="alert alert-success">{{ main.successMsg }}</div>
-		</div>
-
-		<div class="row show-hide-message" ng-show="main.errorMsg">
-			<div class="alert alert-danger">{{ main.errorMsg }}&nbsp
-				<a ng-show="main.expired" href="/resend">
-					<button type="button" class="btn btn-success">Resend Activation Link</button>
-				</a>
-			</div>
-		</div>
-
-		<div class="row show-hide-message" ng-show="facebook.errorMsg">
-			<div class="alert alert-danger">{{ facebook.errorMsg }}&nbsp
-				<a ng-show="facebook.expired" href="/resend">
-					<button type="button" class="btn btn-success">Resend Activation Link</button>
-				</a>
-			</div>
-		</div>
-
-		<div class="row show-hide-message" ng-show="twitter.errorMsg">
-			<div class="alert alert-danger">{{ twitter.errorMsg }}&nbsp
-				<a ng-show="twitter.expired" href="/resend">
-					<button type="button" class="btn btn-success">Resend Activation Link</button>
-				</a>
-			</div>
-		</div>
-
-		<div class="row show-hide-message" ng-show="google.errorMsg">
-			<div class="alert alert-danger">{{ google.errorMsg }}&nbsp
-				<a ng-show="google.expired" href="/resend">
-					<button type="button" class="btn btn-success">Resend Activation Link</button>
-				</a>
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <form name="sentMessage" id="contactForm" ng-submit="main.doLogin(loginData);" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Username:</label>
+                                <input ng-disabled="main.disabled" class="form-control" type="text" name="username" placeholder="username *" ng-model="main.loginData.username" autocomplete="off">
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input ng-disabled="main.disabled" class="form-control" type="password" name="password" placeholder="password *" ng-model="main.loginData.password">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message." style="resize: none;">
+                                    Sample User: &#10; Username: demo &#10; Password: PAssword123!@#
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-left">
+                            <div>
+                                <a href="/resetpassword">
+                                    <button ng-disabled="main.disabled" type="button" class="btn btn-danger">Forgot Password</button>
+                                </a>
+                                <a href="/resetusername">
+                                    <button ng-disabled="main.disabled" type="button" class="btn btn-info">Forgot Username</button>
+                                </a>
+                            </div>
+                            <br>
+                            <div id="success"></div>
+                            <button type="submit" ng-disabled="main.disabled" class="btn btn-xl">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="jumbotron text-center" ng-show="main.loading">
+            <span class="glyphicon glyphicon-repeat spinner"></span>
+            <p>Loading....</p>
+        </div>
+        <div class="row show-hide-message" ng-show="main.successMsg || main.errorMsg">
+            <div ng-class="alert">{{ main.successMsg || main.errorMsg }}</div>&nbsp
+            <a ng-show="main.expired" href="/resend">
+                <button type="button" class="btn btn-success">Resend Activation Link</button>
+            </a>
+        </div>
+    </div>
 </section>
