@@ -2,151 +2,151 @@
 <html lang="en">
 
 <head>
-    <base href="/">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="assets/images/company.ico">
-    <link rel="shortcut icon" type="image/ico" href="assets/images/company.ico">
-    <title>Ei-Ji Company</title>
-    <!-- Angular Files -->
-    <script src="assets/js/angular.js"></script>
-    <script src="assets/js/angular-route.js"></script>
-    <script src="assets/js/angular-animate.js"></script>
-    <!-- Angular Config/Routes -->
-    <script src="app/app.js"></script>
-    <script src="app/routes.js"></script>
-    <!-- Angular Controllers -->
-    <script src="app/controllers/userCtrl.js"></script>
-    <script src="app/controllers/mainCtrl.js"></script>
-    <script src="app/controllers/emailCtrl.js"></script>
-    <script src="app/controllers/managementCtrl.js"></script>
-    <!-- Angular Services -->
-    <script src="app/services/userServices.js"></script>
-    <script src="app/services/authServices.js"></script>
-    <!-- Style Sheets -->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="assets/images/company.ico">
+  <link rel="shortcut icon" type="image/ico" href="assets/images/company.ico">
+  <title>Ei-Ji Company</title>
+  <!-- Angular Files -->
+  <script src="assets/js/angular.js"></script>
+  <script src="assets/js/angular-route.js"></script>
+  <script src="assets/js/angular-animate.js"></script>
+  <!-- Angular Config/Routes -->
+  <script src="app/app.js"></script>
+  <script src="app/routes.js"></script>
+  <!-- Angular Controllers -->
+  <script src="app/controllers/userCtrl.js"></script>
+  <script src="app/controllers/mainCtrl.js"></script>
+  <script src="app/controllers/emailCtrl.js"></script>
+  <script src="app/controllers/managementCtrl.js"></script>
+  <!-- Angular Services -->
+  <script src="app/services/userServices.js"></script>
+  <script src="app/services/authServices.js"></script>
+  <!-- Style Sheets -->
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 </head>
 
 <body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
-    <div class="row">
-        <div class="slide"></div>
+  <div class="row">
+    <div class="slide"></div>
+  </div>
+
+  <nav class="navbar navbar-inverse navbar-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Ei-Ji Company</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/contact">Contact</a>
+          </li>
+          <li class="dropdown">
+            <a ng-show="!main.isLoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">New User
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a ng-show="!main.isLoggedIn" href="/register">Register</a>
+              </li>
+              <li>
+                <a ng-show="!main.isLoggedIn" href="/login">Login</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a ng-show="main.isLoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Hello, {{ main.username }}
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/profile">Profile</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li>
+                <a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <nav class="navbar navbar-inverse navbar-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                    aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/">Ei-Ji Company</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
-                    <li class="dropdown">
-                        <a ng-show="!main.isLoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">New User
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a ng-show="!main.isLoggedIn" href="/register">Register</a>
-                            </li>
-                            <li>
-                                <a ng-show="!main.isLoggedIn" href="/login">Login</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown">
-                        <a ng-show="main.isLoggedIn" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Hello, {{ main.username }}
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="/profile">Profile</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li>
-                                <a ng-show="main.isLoggedIn" href="#" ng-click="main.logout();">Logout</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container theme-showcase" role="main">
-        <center id="myDIV">
-            <h1>Ei-Ji Company</h1>
-            <p>Welcome to the Web shopping</p>
-        </center>
-        <br>
-        <div ng-view></div>
-    </div>
-
+  <div class="container theme-showcase" role="main">
+    <center id="myDIV">
+      <h1>Ei-Ji Company</h1>
+      <p>Welcome to the Web shopping</p>
+    </center>
     <br>
-    <footer id="myFooter">
-        <div class="second-bar">
-            <div class="container">
-                <h2 class="logo">
-                    <a href="/">
-                        <kbd class="logos">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </kbd> Ei-Ji Company
-                    </a>
-                </h2>
-                <div style="float:right;">
-                    <a href="https://github.com/jirayuch01/" target="_blank" class="twitter">
-                        <i class="fa fa-github-alt"></i>&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <a href="https://web.facebook.com/JIch01beer/" target="_blank" class="facebook">
-                        <i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;
-                    </a>
-                    <a href="#" class="google">
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                </div>
+    <div ng-view></div>
+  </div>
 
-                <iframe id="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.002871464434!2d98.34988941267238!3d7.894767007898271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3050303528303419%3A0x43ed556e96eb7eb8!2sFaculty+of+Technology+and+Environment!5e0!3m2!1sen!2sth!4v1508085336951"
-                    width="1200" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
-            </div>
+  <br>
+  <footer id="myFooter">
+    <div class="second-bar">
+      <div class="container">
+        <h2 class="logo">
+          <a href="/">
+            <kbd class="logos">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </kbd> Ei-Ji Company
+          </a>
+        </h2>
+        <div style="float:right;">
+          <a href="https://github.com/jirayuch01/" target="_blank" class="twitter">
+            <i class="fa fa-github-alt"></i>&nbsp;&nbsp;&nbsp;
+          </a>
+          <a href="https://web.facebook.com/JIch01beer/" target="_blank" class="facebook">
+            <i class="fa fa-facebook"></i>&nbsp;&nbsp;&nbsp;
+          </a>
+          <a href="#" class="google">
+            <i class="fa fa-google-plus"></i>
+          </a>
         </div>
-        <div class="footer-copyright">
-            <p style="color: white;" class="m-0 text-center text-white">
-                &copy; 2017 Copyright Ei-Ji Company Developed by
-                <a style="color: aqua;" href="https://web.facebook.com/JIch01beer" target="_blank">
-                    <b>Jirayu Chinnawong
-                        <b>
-                </a>
-            </p>
-        </div>
-    </footer>
 
-    <script src="assets/js/jquery-3.1.1.min.js"></script>
-    <script src="assets/js/bootstrap.js"></script>
+        <iframe id="map-container" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.002871464434!2d98.34988941267238!3d7.894767007898271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3050303528303419%3A0x43ed556e96eb7eb8!2sFaculty+of+Technology+and+Environment!5e0!3m2!1sen!2sth!4v1508085336951"
+          width="1200" height="270" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <p style="color: white;" class="m-0 text-center text-white">
+        &copy; 2017 Copyright Ei-Ji Company Developed by
+        <a style="color: aqua;" href="https://web.facebook.com/JIch01beer" target="_blank">
+          <b>Jirayu Chinnawong
+            <b>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
 </body>
 
 </html>
