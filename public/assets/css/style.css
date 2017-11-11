@@ -326,7 +326,7 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url(../images/5826a4f0d015d89e449ccb2a_3a3586cafd678954c62dd411566278b8-dl9ejl.jpg);
+    background-image: url(../images/company.jpg);
     background-position: center center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -355,11 +355,12 @@ header .intro-text .intro-heading {
     font-size: 50px;
     font-weight: 700;
     line-height: 50px;
+    color: tomato;
 }
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
+        padding-top: 340px;
         padding-bottom: 200px;
     }
     header .intro-text .intro-lead-in {
@@ -400,7 +401,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding: 150px 0;
+        padding: 75px 0;
     }
 }
 
@@ -759,7 +760,7 @@ section#contact .text-danger {
 }
 
 footer {
-    padding: 25px 0;
+    padding: 0px 0;
     text-align: center;
 }
 

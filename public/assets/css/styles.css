@@ -154,20 +154,20 @@ hr.style5 {
 }
 
 .slide {
-    height: 340px;
-    background-image:url('../images/company.jpg');
+    /* height: 340px; */
+    /* background-image:url('../images/company.jpg'); */
     background-size: cover;
     text-align: center;
     vertical-align: middle;
-    line-height: 300px;
+    /* line-height: 300px; */
     color: #333333; 
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 8vw;
     font-weight: bold; 
     letter-spacing: -1px;
     flex-wrap: wrap;
-    font-size: 80px;
-    color: blueviolet;
+    /* font-size: 80px; */
+    /* color: blueviolet; */
     text-decoration: underline;
     opacity: 1;
 }

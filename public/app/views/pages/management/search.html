@@ -1,7 +1,11 @@
 <div class="row text-center">
     <div class="container">
-        <h2 class="section-heading">Search Engine</h2>
+            <center id="myDIV">
+                    <br>
+                    <br>
+                    <br>        <h2 class="section-heading">Search Engine</h2>
         <h3 class="section-subheading text-muted">This page allows you to perform an advanced search of users in the database.</h3>
+                </center>
     </div>
 </div>
 
@@ -41,19 +45,27 @@
             <span class="sr-only">Toggle Dropdown</span>
         </button>
         <ul class="dropdown-menu">
-            <li><a ng-click="management.sortOrder('username');" href="#">Username</a></li>
-            <li><a ng-click="management.sortOrder('email');" href="#">E-mail</a></li>
-            <li><a ng-click="management.sortOrder('name');" href="#">Name</a></li>
+            <li>
+                <a ng-click="management.sortOrder('username');" href="#">Username</a>
+            </li>
+            <li>
+                <a ng-click="management.sortOrder('email');" href="#">E-mail</a>
+            </li>
+            <li>
+                <a ng-click="management.sortOrder('name');" href="#">Name</a>
+            </li>
         </ul>
     </div>
 </div>
 
 <br>
 <div ng-show="management.searchLimit === undefined">
-    <p><strong>Results: </strong>{{ (management.users | filter: advancedSearchFilter | limitTo: management.searchLimit).length }}</p>
+    <p>
+        <strong>Results: </strong>{{ (management.users | filter: advancedSearchFilter | limitTo: management.searchLimit).length }}</p>
 </div>
 <div ng-show="management.sort">
-    <p><strong>Sort by: </strong>{{ management.sort }}</p>
+    <p>
+        <strong>Sort by: </strong>{{ management.sort }}</p>
 </div>
 
 <br>
