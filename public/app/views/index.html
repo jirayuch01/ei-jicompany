@@ -30,6 +30,10 @@
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <!-- Chartjs -->
+    <script src="assets/js/Chart.bundle.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/line.js"></script>
 </head>
 
 <body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadme" ng-cloak>
@@ -61,9 +65,12 @@
                     </li>
                     <li>
                         <a ng-show="main.isLoggedIn" class="page-scroll" href="/profile"><kbd class="logos"><i class="fa fa-user" aria-hidden="true"></i></kbd> Hi, {{ main.username }}</a>
-                        </li>    
+                    </li>    
                     <li>
                         <a ng-show="main.isLoggedIn && main.authorized" class="page-scroll" href="/management"><kbd class="logos"><i class="fa fa-cogs" aria-hidden="true"></i></kbd> Management</a>
+                    </li>                                       
+                    <li>
+                        <a ng-show="main.isLoggedIn && main.authorized" class="page-scroll" href="/line" onClick="window.location.reload()"><kbd class="logos"><i class="fa fa-bar-chart" aria-hidden="true"></i></kbd> Sales</a>
                     </li>
                     <li>
                         <a ng-show="main.isLoggedIn" class="page-scroll" href="#" ng-click="main.logout();"><kbd class="logos"><i class="fa fa-sign-out" aria-hidden="true"></i></kbd> Logout</a>

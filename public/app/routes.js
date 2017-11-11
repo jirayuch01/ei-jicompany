@@ -88,6 +88,12 @@ var app = angular.module('appRoutes', ['ngRoute'])
                 authenticated: true,
                 permission: ['admin', 'moderator']
             })
+            
+            .when('/line', {
+                templateUrl: 'app/views/pages/moderator/line.html',
+                authenticated: true,
+                permission: ['moderator']
+            })  
             .otherwise({ redirectTo: '/' });
         $locationProvider.html5Mode({ enabled: true, requireBase: false });
     });

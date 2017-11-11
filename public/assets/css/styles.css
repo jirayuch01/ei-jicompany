@@ -171,3 +171,9 @@ hr.style5 {
     text-decoration: underline;
     opacity: 1;
 }
+
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
